@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wireless Phone Connect</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <header><div class="brandmark">W</div><div><h1>Wireless Phone Connect</h1><p>QR connection · Browser-based demo</p></div><button id="themeBtn" class="ghost">☼ Theme</button></header>
+  <main class="grid">
+    <section class="panel hero">
+      <div class="eyebrow">PC CONTROL PANEL</div><h2>Connect an Android phone</h2>
+      <p class="muted">Generate a QR code and scan it with the phone's camera. This demo tracks connection status; it does not capture the phone's full screen.</p>
+      <div class="qr-wrap"><img id="qr" alt="Connection QR code" hidden><div id="qrPlaceholder">QR code will appear here</div></div>
+      <div class="actions"><button id="createBtn" class="primary">Generate QR</button><button id="downloadBtn" disabled>Download QR</button><button id="exitBtn" class="danger">Exit / Stop</button></div>
+      <div class="url" id="urlBox">No session yet</div>
+      <p class="hint">To share this QR with someone on another network, deploy this site to an HTTPS public host and set PUBLIC_URL to that address.</p>
+    </section>
+    <section class="panel">
+      <div class="eyebrow">DEVICES</div><h2>Connected devices</h2>
+      <p class="muted">The PC keeps the last known status in this browser while the page remains open.</p>
+      <div id="deviceList" class="device-list"><div class="empty">No phone connected yet.</div></div>
+      <div class="status-note"><span class="dot"></span><span id="overallStatus">Waiting for a session</span></div>
+    </section>
+    <section class="panel wide">
+      <div class="eyebrow">CAPABILITIES & LIMITS</div><h2>View-only browser mode</h2>
+      <div class="features">
+        <div><b>✓ QR download</b><span>Save the QR as a PNG and send it to another person.</span></div>
+        <div><b>✓ Different Wi-Fi</b><span>Possible when hosted publicly over HTTPS.</span></div>
+        <div><b>✓ Remember status</b><span>Shows Connected/Offline; no screen is secretly accessed.</span></div>
+        <div><b>— Full screen mirroring</b><span>Not available from ordinary browser code alone on Android.</span></div>
+      </div>
+    </section>
+  </main>
+  <footer>Wireless Phone Connect · Prototype v1.0 · No Python</footer>
+</div>
+<script src="/socket.io/socket.io.js"></script><script src="app.js"></script>
+</body></html>

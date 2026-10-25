@@ -1,0 +1,13 @@
+{
+  "name": "wireless-phone-connect",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser-based QR connection demo; no Python",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.1"
+  }
+}
