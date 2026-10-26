@@ -12,6 +12,9 @@ const io = new Server(server);
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 app.get("/api/session", async (_req, res) => {
   const token = Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
   const base = process.env.PUBLIC_URL || `http://localhost:${PORT}`;
